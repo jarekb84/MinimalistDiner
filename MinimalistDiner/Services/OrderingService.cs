@@ -67,6 +67,9 @@ namespace MinimalistDiner.Services
             PrintOutput(selectedMenu, customerOrder);
         }
 
+        // console arguments are split by spaces
+        // so we want to account for the user adding or not adding spaces between their 
+        // comma delimited list of order selections
         private string[] ParseArgs(string[] args)
         {
             var output = new List<string>();

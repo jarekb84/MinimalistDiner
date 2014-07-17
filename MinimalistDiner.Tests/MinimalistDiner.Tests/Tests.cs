@@ -78,5 +78,45 @@ namespace MinimalistDiner.Tests
 
             Assert.AreEqual("steak, error", order.Result);
         }
+
+        [Test]
+        public void LunchInvalidMenuSelected()
+        {
+            MakeOrder("lunch, 1, 2, 3");
+
+            Assert.AreEqual("error", order.Result);
+        }
+
+        [Test]
+        public void NightOrderWithNoSelections()
+        {
+            MakeOrder("night");
+
+            Assert.AreEqual("error", order.Result);
+        }
+
+        [Test]
+        public void NightOrderInAllCaps()
+        {
+            MakeOrder("NIGHT, 1, 2, 3");
+
+            Assert.AreEqual("steak, potato, wine", order.Result);
+        }
+
+        [Test]
+        public void NoSpacesBetweenSelections()
+        {
+            MakeOrder("night,1,2,3");
+
+            Assert.AreEqual("steak, potato, wine", order.Result);
+        }
+
+        [Test]
+        public void SelectionsWithMixedSpaces()
+        {
+            MakeOrder("night,1, 2, 3");
+
+            Assert.AreEqual("steak, potato, wine", order.Result);
+        }
     }
 }

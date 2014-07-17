@@ -19,21 +19,24 @@ namespace MinimalistDiner.Services
             Menu selectedMenu = null;
             var customerOrder = new List<Dish>();
 
+            args = ParseArgs(args);
+
             if (args.Any())
             {
-                selectedMenu = _menuService.Menus.FirstOrDefault(m => m.Name == args[0].TrimEnd(',').ToLower());
+                selectedMenu = _menuService.Menus.FirstOrDefault(m => m.Name == args[0]);
 
                 if (selectedMenu == null)
                 {
                     selectedMenu = new Menu {HasError = true, ErrorMessage = "error"};
                     PrintOutput(selectedMenu);
+                    return;
                 }
 
                 Dish selectedDish;
 
                 for (int i = 1; i < args.Count(); i++)
                 {
-                    selectedDish = selectedMenu.Dishes.FirstOrDefault(d => d.Value == args[i].TrimEnd(','));
+                    selectedDish = selectedMenu.Dishes.FirstOrDefault(d => d.Value == args[i]);
 
                     if (selectedDish == null)
                     {
@@ -60,7 +63,28 @@ namespace MinimalistDiner.Services
                     }
                 }
             }
+            
             PrintOutput(selectedMenu, customerOrder);
+        }
+
+        private string[] ParseArgs(string[] args)
+        {
+            var output = new List<string>();
+
+            foreach (var s in args)
+            {
+                var values = s.Split(',');
+
+                foreach (var v in values)
+                {
+                    if (v.Length > 0)
+                    {
+                        output.Add(v.ToLower().Trim());    
+                    }
+                }
+            }
+
+            return output.ToArray();
         }
 
         private void PrintOutput(Menu menu, List<Dish> customerOrder = null)
@@ -93,7 +117,6 @@ namespace MinimalistDiner.Services
                 {
                     break;
                 }
-                
             }    
             
             Result = string.Format("{0}", output.Trim().TrimEnd(','));

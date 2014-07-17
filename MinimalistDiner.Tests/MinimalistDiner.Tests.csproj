@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
-      <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,7 +49,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MinimalistDiner\MinimalistDiner.csproj">
+    <ProjectReference Include="..\MinimalistDiner\MinimalistDiner.csproj">
       <Project>{59c42a9e-dbc2-4495-9d3f-a505bb58fdfd}</Project>
       <Name>MinimalistDiner</Name>
     </ProjectReference>

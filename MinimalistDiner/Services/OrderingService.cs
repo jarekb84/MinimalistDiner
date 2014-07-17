@@ -63,6 +63,12 @@ namespace MinimalistDiner.Services
                     }
                 }
             }
+            else
+            {
+                selectedMenu = new Menu();
+                selectedMenu.HasError = true;
+                selectedMenu.ErrorMessage = "error";
+            }
             
             PrintOutput(selectedMenu, customerOrder);
         }

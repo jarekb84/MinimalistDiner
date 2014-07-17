@@ -29,7 +29,7 @@ namespace MinimalistDiner.Services
             nightMenu.Dishes.Add(new Dish { Name = "steak", Value = "1", Type = DishType.Entrée, Priority = 1, IsMultipleAllowed = false });
             nightMenu.Dishes.Add(new Dish { Name = "potato", Value = "2", Type = DishType.Side, Priority = 2, IsMultipleAllowed = true });
             nightMenu.Dishes.Add(new Dish { Name = "wine", Value = "3", Type = DishType.Drink, Priority = 3, IsMultipleAllowed = false });
-            nightMenu.Dishes.Add(new Dish { Name = "cake", Value = "4", Type = DishType.Desert, Priority = 4, IsMultipleAllowed = true });
+            nightMenu.Dishes.Add(new Dish { Name = "cake", Value = "4", Type = DishType.Desert, Priority = 4, IsMultipleAllowed = false });
             
             Menus.Add(nightMenu);
         }

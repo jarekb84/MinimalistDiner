@@ -4,7 +4,7 @@ using MinimalistDiner.Models;
 
 namespace MinimalistDiner.Services
 {
-    class MenuService
+    public class MenuService
     {
         public List<Menu> Menus { get; set; }
 
@@ -19,7 +19,7 @@ namespace MinimalistDiner.Services
             var morningMenu = new Menu { Name = "morning", Type = MenuType.Morning};
 
             morningMenu.Dishes.Add(new Dish { Name = "eggs", Value = "1", Type = DishType.Entrée, Priority = 1, IsMultipleAllowed = false});
-            morningMenu.Dishes.Add(new Dish { Name = "Toast", Value = "2", Type = DishType.Side, Priority = 2, IsMultipleAllowed = false });
+            morningMenu.Dishes.Add(new Dish { Name = "toast", Value = "2", Type = DishType.Side, Priority = 2, IsMultipleAllowed = false });
             morningMenu.Dishes.Add(new Dish { Name = "coffee", Value = "3", Type = DishType.Drink, Priority = 3, IsMultipleAllowed = true });
             
             Menus.Add(morningMenu);

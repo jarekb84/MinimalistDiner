@@ -1,6 +1,6 @@
 ﻿namespace MinimalistDiner.Enums
 {
-    enum MenuType
+    public enum MenuType
     {
         Morning,
         Night

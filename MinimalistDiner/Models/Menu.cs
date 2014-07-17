@@ -3,7 +3,7 @@ using MinimalistDiner.Enums;
 
 namespace MinimalistDiner.Models
 {
-    class Menu
+    public class Menu
     {
         public string Name { get; set; }
         public MenuType Type { get; set; }

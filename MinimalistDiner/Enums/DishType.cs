@@ -1,6 +1,6 @@
 ﻿namespace MinimalistDiner.Enums
 {
-    enum DishType
+    public enum DishType
     {
         Entrée, 
         Side, 

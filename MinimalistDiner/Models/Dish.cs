@@ -1,8 +1,9 @@
-﻿using MinimalistDiner.Enums;
+﻿using MinimalistDiner.Common;
+using MinimalistDiner.Enums;
 
 namespace MinimalistDiner.Models
 {
-    public class Dish
+    public class Dish : ContainsError
     {
         public string Value { get; set; }
         public string Name { get; set; }
@@ -10,7 +11,5 @@ namespace MinimalistDiner.Models
         public int Priority { get; set; }
         public bool IsMultipleAllowed { get; set; }
         public int QuantityOrdered { get; set; }
-        public bool HasError { get; set; }
-        public string ErrorMessage { get; set; }
     }
 }

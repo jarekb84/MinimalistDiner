@@ -25,7 +25,8 @@ namespace MinimalistDiner.Services
 
                 if (selectedMenu == null)
                 {
-                    PrintOutput();
+                    selectedMenu = new Menu {HasError = true, ErrorMessage = "error"};
+                    PrintOutput(selectedMenu);
                 }
 
                 Dish selectedDish;
@@ -62,12 +63,12 @@ namespace MinimalistDiner.Services
             PrintOutput(selectedMenu, customerOrder);
         }
 
-        private void PrintOutput(Menu menu = null, List<Dish> customerOrder = null)
+        private void PrintOutput(Menu menu, List<Dish> customerOrder = null)
         {
             var output = "";
-            if (menu == null)
+            if (menu.HasError)
             {
-                Result = "error";
+                Result = menu.ErrorMessage;
                 return;
             }
 

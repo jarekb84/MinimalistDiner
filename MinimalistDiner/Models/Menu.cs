@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using MinimalistDiner.Enums;
+using MinimalistDiner.Common;
 
 namespace MinimalistDiner.Models
 {
-    public class Menu
+    public class Menu:  ContainsError
     {
         public string Name { get; set; }
         public MenuType Type { get; set; }

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\ContainsError.cs" />
     <Compile Include="Models\Dish.cs" />
     <Compile Include="Enums\DishType.cs" />
     <Compile Include="Enums\MenuType.cs" />

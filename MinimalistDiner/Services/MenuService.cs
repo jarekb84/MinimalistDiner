@@ -14,6 +14,9 @@ namespace MinimalistDiner.Services
             PopulateMenus();
         }
         
+        /// <summary>
+        /// Hardcoded list of dishes for each menu type
+        /// </summary>
         private void PopulateMenus()
         {
             var morningMenu = new Menu { Name = "morning", Type = MenuType.Morning};

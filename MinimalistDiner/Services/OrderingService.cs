@@ -13,6 +13,10 @@ namespace MinimalistDiner.Services
             TakeOrder(args);
         }
 
+        /// <summary>
+        /// Creates customer order based on user inputs and enforces quantity and availability rules
+        /// </summary>
+        /// <param name="args">list of command line arguments</param>
         private void TakeOrder(string[] args)
         {
             var _menuService = new MenuService();
@@ -28,7 +32,7 @@ namespace MinimalistDiner.Services
                 if (selectedMenu == null)
                 {
                     selectedMenu = new Menu {HasError = true, ErrorMessage = "error"};
-                    PrintOutput(selectedMenu);
+                    SetResult(selectedMenu);
                     return;
                 }
 
@@ -63,13 +67,25 @@ namespace MinimalistDiner.Services
                     }
                 }
             }
+            else
+            {
+                selectedMenu = new Menu {HasError = true, ErrorMessage = "error"};
+            }
             
-            PrintOutput(selectedMenu, customerOrder);
+            SetResult(selectedMenu, customerOrder);
         }
 
-        // console arguments are split by spaces
-        // so we want to account for the user adding or not adding spaces between their 
-        // comma delimited list of order selections
+        
+
+        /// <summary>
+        /// Loops through arguments array and splits out any items that weren't delimeted correctly
+        /// </summary>
+        /// <remarks>
+        /// Console arguments are split by spaces so we want to account for the user 
+        /// adding or not adding spaces between their comma delimited list of order selections
+        /// </remarks>
+        /// <param name="args">command line arguments</param>
+        /// <returns>Cleaned up and split up list of command line arguments</returns>
         private string[] ParseArgs(string[] args)
         {
             var output = new List<string>();
@@ -90,7 +106,12 @@ namespace MinimalistDiner.Services
             return output.ToArray();
         }
 
-        private void PrintOutput(Menu menu, List<Dish> customerOrder = null)
+        /// <summary>
+        /// Creates output string based on customer order. Stops string construction when any errors found.
+        /// </summary>
+        /// <param name="menu">User selected menu</param>
+        /// <param name="customerOrder">User selected dishes</param>
+        private void SetResult(Menu menu, List<Dish> customerOrder = null)
         {
             var output = "";
             if (menu.HasError)

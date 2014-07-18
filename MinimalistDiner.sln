@@ -5,7 +5,12 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalistDiner", "MinimalistDiner\MinimalistDiner.csproj", "{59C42A9E-DBC2-4495-9D3F-A505BB58FDFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalistDiner.Tests", "MinimalistDiner.Tests\MinimalistDiner.Tests\MinimalistDiner.Tests.csproj", "{9E624CEF-66D4-4E3D-BB1C-550D7EA18DD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalistDiner.Tests", "MinimalistDiner.Tests\MinimalistDiner.Tests.csproj", "{9E624CEF-66D4-4E3D-BB1C-550D7EA18DD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BF9562AC-9B8F-43A7-A027-8CC5BC6F06BF}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

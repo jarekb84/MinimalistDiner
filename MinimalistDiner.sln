@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BF9562
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalistDiner.Data", "MinimalistDiner.Data\MinimalistDiner.Data.csproj", "{05091882-9E80-40FD-B9A5-BA72EA888494}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{9E624CEF-66D4-4E3D-BB1C-550D7EA18DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E624CEF-66D4-4E3D-BB1C-550D7EA18DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E624CEF-66D4-4E3D-BB1C-550D7EA18DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05091882-9E80-40FD-B9A5-BA72EA888494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05091882-9E80-40FD-B9A5-BA72EA888494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05091882-9E80-40FD-B9A5-BA72EA888494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05091882-9E80-40FD-B9A5-BA72EA888494}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
